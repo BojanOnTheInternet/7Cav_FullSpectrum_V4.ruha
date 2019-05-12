@@ -9,17 +9,17 @@ before_script:
 - sudo apt-get install armake -y
 script:
 - export VERSION=`cat description.ext  | grep -o 'onLoadName = ".*"' | grep -o 'v[0-9.][0-9.]*'`
-- armake build -w unquoted-string -w redefinition-wo-undef -w excessive-concatenation -x ".*" -x "*.pbo" -x "*.md" . 7Cav_FullSpectrum_$VERSION.WL_Rosche.pbo
+- armake build -w unquoted-string -w redefinition-wo-undef -w excessive-concatenation -x ".*" -x "*.pbo" -x "*.md" . 7Cav_FullSpectrum_$VERSION.ruha.pbo
 - git tag $VERSION
 deploy:
   if:
     branch: master
   provider: releases
   skip_cleanup: true
-  file: '7Cav_FullSpectrum_$VERSION.WL_Rosche.pbo'
+  file: '7Cav_FullSpectrum_$VERSION.ruha.pbo'
   on:
     branch: master
-    repo: 7Cav/7Cav_FullSpectrum_V4.WL_Rosche
-  name: '7th Cavalry Full Spectrum $VERSION - WL_Rosche'
+    repo: 7Cav/7Cav_FullSpectrum_V4.ruha
+  name: '7th Cavalry Full Spectrum $VERSION - ruha'
   api_key:
-    secure: otHQquFSBVP3u/r/CCUeFyXAiRWbRUH8sjAa3y88UjMcB6ybP5njwmQ4kO5/tyOtFNHpiWCANKJfA950KAslTTkQPWiLZuQgoeoz2t/GilK6GVv1/xvf5Q3EnMnVFY6OaN0GyMH/V7bRWDUENmv6QqVQwx/WKxZPPOE77/ykF/VOKBaQHoFEYMbA4MmTbciF7Qr2Q2Zkip8/SKF2hPJhtrqcM8N1yKqN75QSWA3FMKewWLJ0vD6skXiuYaqwRuGRWFJv7pUhletlKsWM6KX7MvjU6xAhkLYALE3yNEBDunrxeuEydcSBTV1GHYoT4CX4pXvhkxohsFK7wwl1GXvt9NqdrWkdOe1s6gJzkZG8hIzfuQ3BrpYhdbdqmHOkuawsBxpaOMKgsS1MQCtSS9Fs6rGa8s2JDueBaUOsQxo3YHLj+daHqO5LGdoKJ6QhhxEnIQ4PJu0UZ3OvSJo7+PWVQYZhDrt24FU8uct5TGTQCZioiqCxnlA7SnKaIcboeY5WEW+WMO6tbuyxNah3wPb5rdGjcXDxwXubHHX6Dp+39pRruMHkripjf+BbnmKVdw9izQGMQO+FtSlOzIAv2aVKkS3aFp8+X9sWJEK54elTfIAoTAZwBTN8tm9OStXJLJRk2PsrY1/kCPBBwCXA21aT3eCdirLKf8OSJkPJ8WVNd70=
+    secure: LxiT7RJTel/oLskEFAhDZsSui2ilFMoSQTQTSYVLvjZgtvrnKOyC9H5xJS7HPao5aQbhjBgV4ga/7H2l8/Tup57KROfMZ0uBM8upKIKBvONdA7kOK8LeJrmVOifXeRjH82KCEmzVo8KGcGHexjROQrOGDBUkepkQfZInukNDShQiu/pzVh6UO5P1EZt0x3/0EsY3XXsl7WgdOUqSn2h132fyPlv5yGsvcKnMdaksde00Sfi+M7+3esyb+07wB88Lyi7sJZcejRUvwT2vvhOd/olsHtesKpaGubW0oalicHni5y3Rp70Z5Zp5hatrDDB2ahMsYy/VYGRIfetLmVl45KgZIQ48prn0D34/1ffA/ifhtVCzK17UCtsznjN/BUeKwZohuUvugbeYgXJIoF+VAbCMjPcSndCEfytp6VgboTnptMmx5LaZ8rhVtvrU/U2mKOkDfj1hMPONNxcpca4ERuNvqht9WQu+D+UBPNOKAIRDImP3SD4REchvWvI3dpO5nEgUmUadksRfIVN/Qw9rhlXpVEQN5WTGc6VjXXORYtht+j4MO7s349ltdnWUFOH4dlFCSyydue2g0xCojc2TqIZTrteJlklg6Jlvu3Bsde68hwqzaNs8p/7xpf3wltqvxHotVYZDN7GSK/HNj1e4aFtAg91uRjj7h/Ls/SjqGT0=
